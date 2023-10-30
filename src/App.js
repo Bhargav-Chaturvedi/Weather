@@ -43,18 +43,18 @@ const WeatherApp = () => {
 
         {weather && (
           <div className="weather-data">
-            <h2>{weather.name}</h2>
+            <h2 className="head2">{weather.name}</h2>
+            <img
+              className="image"
+              src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+              alt="weather icon"
+            />
             <div>
               Temperature:{" "}
               {(((weather.main.temp - 273.15) * 9) / 5 + 32).toFixed(2)}°F
             </div>
             <div>Weather: {weather.weather[0].main}</div>
             <div>Humidity: {weather.main.humidity}%</div>
-            <img
-              className="image"
-              src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-              alt="weather icon"
-            />
             {/* Add more information like humidity here */}
           </div>
         )}
